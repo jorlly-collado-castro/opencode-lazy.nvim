@@ -1,4 +1,4 @@
-# OpenCode Lazy
+# OpenCode LazyVim Plugin
 
 A LazyVim wrapper for opencode.nvim, making installation and configuration easier.
 
