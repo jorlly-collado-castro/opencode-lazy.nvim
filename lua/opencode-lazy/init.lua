@@ -100,7 +100,7 @@ return {
 				require("opencode").ask("", { submit = true })
 			end,
 			mode = { "n", "x" },
-			desc = "Ask",
+			desc = "Ask (OpenCode)",
 		},
 		-- INFO: Ask a question about the current context.
 		{
@@ -109,7 +109,7 @@ return {
 				require("opencode").ask("@this: ", { submit = true })
 			end,
 			mode = { "n", "x" },
-			desc = "Ask with context",
+			desc = "Ask with context (OpenCode)",
 		},
 		-- INFO: Ask a question about the current buffer.
 		{
@@ -118,7 +118,7 @@ return {
 				require("opencode").ask("@file: ", { submit = true })
 			end,
 			mode = { "n", "x" },
-			desc = "Ask about buffer",
+			desc = "Ask about buffer (OpenCode)",
 		},
 		------------------------------------------------------------------------------------------------------
 		-- INFO: Prompt OpenCode to explain the code.
@@ -128,7 +128,7 @@ return {
 				require("opencode").prompt("explain", { submit = true })
 			end,
 			mode = { "n", "x" },
-			desc = "Explain",
+			desc = "Explain (OpenCode)",
 		},
 		-- INFO: Prompt OpenCode to fix the code.
 		{
@@ -137,7 +137,7 @@ return {
 				require("opencode").prompt("fix", { submit = true })
 			end,
 			mode = { "n", "x" },
-			desc = "Fix",
+			desc = "Fix (OpenCode)",
 		},
 		-- INFO: Prompt OpenCode to diagnose the code.
 		{
@@ -146,7 +146,7 @@ return {
 				require("opencode").prompt("diagnose", { submit = true })
 			end,
 			mode = { "n", "x" },
-			desc = "Diagnose",
+			desc = "Diagnose (OpenCode)",
 		},
 		-- INFO: Prompt OpenCode to review the code.
 		{
@@ -155,7 +155,7 @@ return {
 				require("opencode").prompt("review", { submit = true })
 			end,
 			mode = { "n", "x" },
-			desc = "Review",
+			desc = "Review (OpenCode)",
 		},
 		-- INFO: Prompt OpenCode to generate tests.
 		{
@@ -164,7 +164,7 @@ return {
 				require("opencode").prompt("test", { submit = true })
 			end,
 			mode = { "n", "x" },
-			desc = "Test",
+			desc = "Test (OpenCode)",
 		},
 		-- INFO: Prompt OpenCode to optimize the code.
 		{
@@ -173,7 +173,7 @@ return {
 				require("opencode").prompt("optimize", { submit = true })
 			end,
 			mode = { "n", "x" },
-			desc = "Optimize",
+			desc = "Optimize (OpenCode)",
 		},
 		------------------------------------------------------------------------------------------------------
 		-- INFO: Add a range to OpenCode.
@@ -184,7 +184,7 @@ return {
 			end,
 			expr = true,
 			mode = { "n", "x" },
-			desc = "Add range to OpenCode",
+			desc = "Add range (OpenCode)",
 		},
 		-- INFO: Add a line to OpenCode.
 		{
@@ -194,7 +194,7 @@ return {
 			end,
 			expr = true,
 			mode = { "n" },
-			desc = "Add line to OpenCode",
+			desc = "Add line (OpenCode)",
 		},
 	},
 	config = function()
@@ -238,28 +238,28 @@ return {
 							function()
 								require("opencode").command("session.half.page.up")
 							end,
-							desc = "Half scroll backward",
+							desc = "Half scroll backward (OpenCode)",
 						},
 						{
 							"<C-D>",
 							function()
 								require("opencode").command("session.half.page.down")
 							end,
-							desc = "Half scroll forward",
+							desc = "Half scroll forward (OpenCode)",
 						},
 						{
 							"<C-B>",
 							function()
 								require("opencode").command("session.page.up")
 							end,
-							desc = "Scroll backward",
+							desc = "Scroll backward (OpenCode)",
 						},
 						{
 							"<C-F>",
 							function()
 								require("opencode").command("session.page.down")
 							end,
-							desc = "Scroll forward",
+							desc = "Scroll forward (OpenCode)",
 						},
 					})
 				end
