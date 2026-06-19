@@ -6,9 +6,53 @@ A LazyVim wrapper for opencode.nvim, making installation and configuration easie
 
 <img width="1920" height="1200" alt="screenshot-2026-04-26_16-31-28" src="https://github.com/user-attachments/assets/03a0c2ff-b2ed-43b6-9564-7351e754df68" />
 
-## Installation
+## Requirements
 
-Please refer to: <https://www.lazyvim.org/configuration/plugins>
+- Neovim >= 0.10
+- [lazy.nvim](https://github.com/folke/lazy.nvim)
+- [opencode.nvim](https://github.com/NickvanDyke/opencode.nvim) (installed automatically as a dependency)
+
+## Installation (LazyVim)
+
+Create `~/.config/nvim/lua/plugins/opencode.lua`:
+
+```lua
+-- Local clone (recommended for development):
+-- vim.opt.rtp:prepend("/path/to/opencode-lazy.nvim")
+-- return require("opencode-lazy")
+
+-- Or from GitHub:
+return {
+  "jorlly-collado-castro/opencode-lazy.nvim",
+  -- uncomment to track main:
+  -- branch = "main",
+}
+```
+
+Restart Neovim and run `:Lazy` to install.
+
+## Keybindings
+
+| Key | Mode | Action |
+|---|---|---|
+| `<leader>ao` | n, t, v | Toggle OpenCode panel |
+| `<C-.>` | n, t, v | Quick toggle OpenCode |
+| `<leader>aa` | n, v | Ask with context |
+| `<leader>ax` | n, v | Action menu |
+| `<leader>ap` | n, v | Add to session |
+| `<leader>ai` | n, x | Ask |
+| `<leader>aI` | n, x | Ask with context |
+| `<leader>ab` | n, x | Ask about buffer |
+| `<leader>ape` | n, x | Explain code |
+| `<leader>apf` | n, x | Fix code |
+| `<leader>apd` | n, x | Diagnose |
+| `<leader>apr` | n, x | Review |
+| `<leader>apt` | n, x | Generate tests |
+| `<leader>apo` | n, x | Optimize |
+| `go` | n, x | Add range to session |
+| `goo` | n | Add line to session |
+| `<S-C-u>` | n | Scroll up (half page) |
+| `<S-C-d>` | n | Scroll down (half page) |
 
 ## Usage
 
