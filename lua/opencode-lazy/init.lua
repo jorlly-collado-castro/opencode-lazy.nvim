@@ -1,4 +1,17 @@
 -- lua/opencode-lazy/init.lua
+
+-- Helper to toggle OpenCode terminal using snacks.terminal if available.
+local function opencode_toggle()
+	local opts = vim.g.opencode_opts or {}
+	if opts.server and opts.server.toggle then
+		opts.server.toggle()
+	elseif opts.server and opts.server.start then
+		opts.server.start()
+	else
+		vim.notify("OpenCode server not configured", vim.log.levels.ERROR, { title = "opencode" })
+	end
+end
+
 return {
 	"NickvanDyke/opencode.nvim",
 	version = "*",
@@ -29,18 +42,14 @@ return {
 		-- The OpenCode plugin is displayed as part of the +ai group (<leader>a).
 		{
 			"<leader>ao",
-			function()
-				require("opencode").toggle()
-			end,
+			opencode_toggle,
 			desc = "Toggle (OpenCode)",
 			mode = { "n", "t", "v" },
 		},
 		-- INFO: Open OpenCode in a split view, using a shorter keybinding.
 		{
 			"<C-.>",
-			function()
-				require("opencode").toggle()
-			end,
+			opencode_toggle,
 			desc = "Toggle Quick (OpenCode)",
 			mode = { "n", "t", "v" },
 		},
@@ -202,15 +211,13 @@ return {
 		vim.g.opencode_opts = {
 			server = {
 				start = function()
-					require("opencode.terminal").open("opencode -c --port", {
-						split = "right",
-						width = math.floor(vim.o.columns * 0.35),
+					require("snacks.terminal").open("opencode -c --port", {
+						win = { position = "right", width = math.floor(vim.o.columns * 0.35) },
 					})
 				end,
 				toggle = function()
-					require("opencode.terminal").toggle("opencode -c --port", {
-						split = "right",
-						width = math.floor(vim.o.columns * 0.35),
+					require("snacks.terminal").toggle("opencode -c --port", {
+						win = { position = "right", width = math.floor(vim.o.columns * 0.35) },
 					})
 				end,
 			},
@@ -267,4 +274,3 @@ return {
 		})
 	end,
 }
-
